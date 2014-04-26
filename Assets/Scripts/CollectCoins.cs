@@ -4,7 +4,7 @@ using System.Collections;
 public class CollectCoins : MonoBehaviour {
 	public float coins;
 	
-	void  OnCollisionEnter (  Collision other   ){
+	void  OnTriggerEnter (  Collider other   ){
 		if (other.gameObject.name == "coin") {
 			coins += 1;
 			Destroy(other.gameObject);
