@@ -4,10 +4,11 @@ using System.Collections;
 public class CollectCoins : MonoBehaviour {
 	public float coins;
 	
-	void  OnTriggerEnter (  Collider other   ){
-		if (other.tag == "coin") {
+	void  OnCollisionEnter (  Collision other   ){
+		if (other.gameObject.name == "coin") {
 			coins += 1;
 			Destroy(other.gameObject);
+			Debug.Log ("Hit");
 		}
 	}
 	
