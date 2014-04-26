@@ -12,7 +12,7 @@ public class cameraMove : MonoBehaviour
 		Transform playerTransform = player.transform;
 		// get player position
 		Vector3 position = playerTransform.position;
-		Debug.Log (position.x + " " + position.z);
+		//Debug.Log (position.x + " " + position.z);
 
 		//Map1 camera
 		//If player position between -10 and 10 coordinate in the game world
@@ -22,7 +22,7 @@ public class cameraMove : MonoBehaviour
 			Vector3 move = new Vector3(0,15,0);
 			//Make transform position equal to the new position
 			transform.position = move;
-			Debug.Log ("Here1");
+			//Debug.Log ("Here1");
 		}
 
 		//Map2 camera
@@ -33,7 +33,7 @@ public class cameraMove : MonoBehaviour
 			Vector3 move = new Vector3(15,15,0);
 			//Make transform position equal to the new position
 			transform.position = move;
-			Debug.Log ("Here2");
+			//Debug.Log ("Here2");
 		}
 				
 	}

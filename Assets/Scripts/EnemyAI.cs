@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour {
 	public Transform myTransform;
 	public float moveSpeed = 0.5f;
 	public float rotationSpeed = 3.0f;
+	public static bool Detect;
 
 
 	// Use this for initialization
@@ -16,8 +17,11 @@ public class EnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed*Time.deltaTime);
+		
+		if(Detect){
+			myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed*Time.deltaTime);
 
-		myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+			myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
+		}
 	}
 }
