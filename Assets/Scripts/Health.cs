@@ -16,6 +16,7 @@ public class Health : MonoBehaviour {
 	//An array which holds the different heart images (full, ½ full etc.)
 	public Texture[] heartImages;
 	public GUITexture heartGUI;
+	public Texture gameOverTexture;
 
 	//An Array List which holds the hearts
 	private ArrayList hearts = new ArrayList();
@@ -25,13 +26,27 @@ public class Health : MonoBehaviour {
 	public float maxHeartsOnRow;
 	private float spacingX;
 	private float spacingY;
-	
+	bool gameOver = false;
 	
 	void Start () {
 		spacingX = heartGUI.pixelInset.width;
 		spacingY = -heartGUI.pixelInset.height;
-	
 		AddHearts(startHealth/healthPerHeart);
+	}
+
+	void Update(){
+		if (currentHealth <= 0) {
+			Move.alive = false;
+			gameOver = true;
+		} else {
+			Move.alive = true;
+		}
+	}
+
+	void OnGUI(){
+		if (gameOver) {
+			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gameOverTexture);
+		}
 	}
 
 	//Adds heart to the GUI

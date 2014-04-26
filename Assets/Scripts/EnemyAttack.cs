@@ -39,7 +39,7 @@ public class EnemyAttack : MonoBehaviour {
 		if(distance < 2){
 //			Health hp = (Health)target.GetComponent("Health");
 //			hp.modifyHealth(-3);
-			health.modifyHealth(-3);
+			health.modifyHealth(-5);
 		}
 	}
 }
