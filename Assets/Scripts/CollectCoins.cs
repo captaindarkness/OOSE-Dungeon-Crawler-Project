@@ -8,6 +8,7 @@ public class CollectCoins : MonoBehaviour {
 		if (other.gameObject.name == "coin") {
 			coins += 1;
 			Destroy(other.gameObject);
+			audio.Play();
 			Debug.Log ("Hit");
 		}
 	}

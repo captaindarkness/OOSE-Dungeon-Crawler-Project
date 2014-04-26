@@ -19,7 +19,7 @@ public class cameraMove : MonoBehaviour
 		if (position.x > -10 && position.x < 10 && position.z > -10 && position.z < 10) 
 		{
 			//New vector to hold the new position
-			Vector3 move = new Vector3(0,15,0);
+			Vector3 move = new Vector3(0,17.5f,0);
 			//Make transform position equal to the new position
 			transform.position = move;
 			//Debug.Log ("Here1");
