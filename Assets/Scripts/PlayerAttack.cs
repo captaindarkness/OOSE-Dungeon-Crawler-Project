@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour {
 		}
 
 		//the player will attack when pressing SPACE
-		if(Input.GetKeyUp (KeyCode.Space)){
+		if(Input.GetKeyDown (KeyCode.Space)){
 			if(attackTimer == 0){
 			Attack();
 			attackTimer = coolDown;
