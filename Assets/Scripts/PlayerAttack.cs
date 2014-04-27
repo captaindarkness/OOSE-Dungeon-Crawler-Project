@@ -4,7 +4,7 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour {
 	
-	public GameObject target;
+	Transform target;
 	public float attackTimer;
 	public float coolDown;
 
@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void Update(){
+		target = GameObject.FindWithTag ("enemy").transform;
 		if(attackTimer > 0){
 			attackTimer -= Time.deltaTime;
 		}

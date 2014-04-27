@@ -14,6 +14,7 @@ public class SwordSwing : MonoBehaviour {
 	bool faceDown;
 	bool faceLeft;
 	bool faceRight;
+	public AudioSource swing;
 
 	void Start (){
 		attackTimer = 0;
@@ -78,8 +79,9 @@ public class SwordSwing : MonoBehaviour {
 		if(Input.GetKeyDown (KeyCode.Space)){
 			if(attackTimer == 0){
 				attackTimer = coolDown;
-				Quaternion target = Quaternion.Euler (0, newSwordPos + 30, 0);
+				Quaternion target = Quaternion.Euler (0, newSwordPos + 60, 0);
 				transform.rotation = Quaternion.Slerp (transform.rotation, target, smooth);
+				swing.Play ();
 			}
 		
 		}
