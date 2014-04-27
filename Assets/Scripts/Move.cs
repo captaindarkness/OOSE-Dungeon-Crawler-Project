@@ -5,6 +5,7 @@ public class Move : MonoBehaviour {
 
 	public float playerSpeed = 5.0f;
 	public static bool alive;
+	public float smooth = 2.0f;
 
 	// Use this for initialization
 	void Start () {
