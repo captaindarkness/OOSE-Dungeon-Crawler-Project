@@ -18,7 +18,7 @@ public class SwordSwing : MonoBehaviour {
 
 	void Start (){
 		attackTimer = 0;
-		coolDown = 2.0f;
+		coolDown = 1.0f;
 	}
 
 	void OnDrawGizmos(){
@@ -27,14 +27,14 @@ public class SwordSwing : MonoBehaviour {
 	}
 
 	void Update(){
-
 		if(attackTimer > 0){
 			attackTimer -= Time.deltaTime;
 		}
-		
+
 		if(attackTimer < 0){
 			attackTimer = 0;
 		}
+
 		if(Input.GetKeyDown(KeyCode.W) && !faceUp){
 			newSwordPos = swordPos - 90.0f;
 			transform.rotation = Quaternion.Euler(0,newSwordPos,0);
@@ -42,7 +42,7 @@ public class SwordSwing : MonoBehaviour {
 			faceDown = false;
 			faceLeft = false;
 			faceRight = false;
-			Debug.Log("Facing up");
+			//Debug.Log("Facing up");
 		}
 		if(Input.GetKeyDown(KeyCode.S) && !faceDown){
 			newSwordPos = swordPos + 90.0f;
@@ -51,7 +51,7 @@ public class SwordSwing : MonoBehaviour {
 			faceDown = true;
 			faceLeft = false;
 			faceRight = false;
-			Debug.Log("Facing down");
+			//Debug.Log("Facing down");
 		}
 		if(Input.GetKeyDown(KeyCode.A) && !faceLeft){
 			newSwordPos = swordPos + 180.0f;
@@ -60,7 +60,7 @@ public class SwordSwing : MonoBehaviour {
 			faceDown = false;
 			faceLeft = true;
 			faceRight = false;
-			Debug.Log("Facing left");
+			//Debug.Log("Facing left");
 		}
 		if(Input.GetKeyDown(KeyCode.D) && !faceRight){
 			newSwordPos = swordPos;
@@ -69,7 +69,7 @@ public class SwordSwing : MonoBehaviour {
 			faceDown = false;
 			faceLeft = false;
 			faceRight = true;
-			Debug.Log("Facing right");
+			//Debug.Log("Facing right");
 		}
 
 		if (Input.GetKeyUp (KeyCode.Space)) {
@@ -83,7 +83,6 @@ public class SwordSwing : MonoBehaviour {
 				transform.rotation = Quaternion.Slerp (transform.rotation, target, smooth);
 				swing.Play ();
 			}
-		
 		}
 	}
 }

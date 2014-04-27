@@ -17,13 +17,10 @@ public class EnemyAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 		if (Detect) {
 			myTransform.rotation = Quaternion.Slerp (myTransform.rotation, Quaternion.LookRotation (target.position - myTransform.position), rotationSpeed * Time.deltaTime);
 
 			myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
-		} else {
-			Debug.Log ("No Player");
 		}
 		detectArea ();
 		

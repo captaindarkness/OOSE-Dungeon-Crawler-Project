@@ -1,16 +1,25 @@
 ﻿using UnityEngine;
-
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerAttack : MonoBehaviour {
 	
 	Transform target;
+	public List<GameObject> targets;
 	public float attackTimer;
 	public float coolDown;
 
 	void Start (){
 		attackTimer = 0;
 		coolDown = 2.0f;
+		GameObject[] enemyTargets = GameObject.FindGameObjectsWithTag("enemy");
+		if (enemyTargets != null)
+		{
+			foreach(GameObject go in enemyTargets)
+			{
+				targets.Add(go);
+			}
+		}
 	}
 
 	void Update(){
@@ -34,16 +43,19 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	private void Attack(){
+		foreach(GameObject target in targets){
+			if(target != null){
+				float distance = Vector3.Distance (target.transform.position, transform.position);
 
-		float distance = Vector3.Distance (target.transform.position, transform.position);
+		//		float dir = (target.transform.position - transform.Transform.position).normalized;
+		//
+		//		float direction = Vector3.Dot (dir, transform.forward);
 
-//		float dir = (target.transform.position - transform.Transform.position).normalized;
-//
-//		float direction = Vector3.Dot (dir, transform.forward);
-
-		if(distance < 2){
-			EnemyHealth eh = (EnemyHealth)target.GetComponent("EnemyHealth");
-			eh.AddjustCurrentHealth(-10);
+				if(distance < 2){
+					EnemyHealth eh = (EnemyHealth)target.GetComponent("EnemyHealth");
+					eh.AddjustCurrentHealth(-10);
+				}
+			}
 		}
 	}
 
