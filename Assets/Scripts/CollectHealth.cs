@@ -8,7 +8,7 @@ public class CollectHealth : MonoBehaviour {
 
 	void  OnTriggerEnter (  Collider other   ){
 		if (other.gameObject.name == "healthup") {
-			health.modifyHealth(+5);
+			health.modifyHealth(+20);
 			healthSound.Play();
 			Destroy(other.gameObject);
 		}
