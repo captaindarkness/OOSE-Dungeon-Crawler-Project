@@ -35,7 +35,7 @@ public class SwordSwing : MonoBehaviour {
 			attackTimer = 0;
 		}
 
-		if(Input.GetKeyDown(KeyCode.W) && !faceUp){
+		if(Input.GetKeyDown(KeyCode.W) && !faceUp || Input.GetKeyDown(KeyCode.UpArrow) && !faceUp){
 			newSwordPos = swordPos - 90.0f;
 			transform.rotation = Quaternion.Euler(0,newSwordPos,0);
 			faceUp = true;
@@ -44,7 +44,7 @@ public class SwordSwing : MonoBehaviour {
 			faceRight = false;
 			//Debug.Log("Facing up");
 		}
-		if(Input.GetKeyDown(KeyCode.S) && !faceDown){
+		if(Input.GetKeyDown(KeyCode.S) && !faceDown || Input.GetKeyDown(KeyCode.DownArrow) && !faceDown){
 			newSwordPos = swordPos + 90.0f;
 			transform.rotation = Quaternion.Euler(0,newSwordPos,0);
 			faceUp = false;
@@ -53,7 +53,7 @@ public class SwordSwing : MonoBehaviour {
 			faceRight = false;
 			//Debug.Log("Facing down");
 		}
-		if(Input.GetKeyDown(KeyCode.A) && !faceLeft){
+		if(Input.GetKeyDown(KeyCode.A) && !faceLeft || Input.GetKeyDown(KeyCode.LeftArrow) && !faceLeft){
 			newSwordPos = swordPos + 180.0f;
 			transform.rotation = Quaternion.Euler(0,newSwordPos,0);
 			faceUp = false;
@@ -62,7 +62,7 @@ public class SwordSwing : MonoBehaviour {
 			faceRight = false;
 			//Debug.Log("Facing left");
 		}
-		if(Input.GetKeyDown(KeyCode.D) && !faceRight){
+		if(Input.GetKeyDown(KeyCode.D) && !faceRight || Input.GetKeyDown(KeyCode.RightArrow) && !faceRight){
 			newSwordPos = swordPos;
 			transform.rotation = Quaternion.Euler(0,newSwordPos,0);
 			faceUp = false;
