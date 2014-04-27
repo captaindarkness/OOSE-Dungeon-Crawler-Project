@@ -3,12 +3,13 @@ using System.Collections;
 
 public class CollectCoins : MonoBehaviour {
 	public float coins;
+	public AudioSource coinSound;
 	
 	void  OnTriggerEnter (  Collider other   ){
 		if (other.gameObject.name == "coin") {
 			coins += 1;
 			Destroy(other.gameObject);
-			audio.Play();
+			coinSound.Play();
 			Debug.Log ("Hit");
 		}
 	}
