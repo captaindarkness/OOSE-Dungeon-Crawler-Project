@@ -14,25 +14,35 @@ public class cameraMove : MonoBehaviour
 		Vector3 position = playerTransform.position;
 		//Debug.Log (position.x + " " + position.z);
 
-		//Map1 camera
-		//If player position between -10 and 10 coordinate in the game world
-		if (position.x > -10 && position.x < 10 && position.z > -10 && position.z < 10) 
+		if (position.x > transform.position.x + 10)
 		{
 			//New vector to hold the new position
-			Vector3 move = new Vector3(0,19,0);
+			Vector3 move = new Vector3(transform.position.x + 20,19,transform.position.z);
 			//Make transform position equal to the new position
 			transform.position = move;
+			//Debug.Log ("Here1");
 		}
-
-		//Map2 camera
-		//If player position between 10 and 30 coordinate in the game world
-		if (position.x > 10 && position.x < 30) 
+		else if(position.x < transform.position.x - 10){
+			//New vector to hold the new position
+			Vector3 move = new Vector3(transform.position.x - 20,19,transform.position.z);
+			//Make transform position equal to the new position
+			transform.position = move;
+			//Debug.Log ("Here1");
+		}
+		if (position.z > transform.position.z + 10)
 		{
 			//New vector to hold the new position
-			Vector3 move = new Vector3(20,20,0);
+			Vector3 move = new Vector3(transform.position.x,19,transform.position.z + 20);
 			//Make transform position equal to the new position
 			transform.position = move;
+			//Debug.Log ("Here1");
 		}
-				
+		else if(position.z < transform.position.z - 10){
+			//New vector to hold the new position
+			Vector3 move = new Vector3(transform.position.x,19,transform.position.z -20);
+			//Make transform position equal to the new position
+			transform.position = move;
+			//Debug.Log ("Here1");
+		}
 	}
 }
