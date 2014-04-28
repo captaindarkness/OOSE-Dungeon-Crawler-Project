@@ -9,8 +9,8 @@ public class CollectHealth : MonoBehaviour {
 	void  OnTriggerEnter (  Collider other   ){
 		//Checks wether the object is the correct one.
 		if (other.gameObject.name == "healthup") {
-			//Adds 20 health to the player's health.
-			health.modifyHealth(+20);
+			//Adds 30 health to the player's health.
+			health.modifyHealth(+30);
 			//The specific sound will play.
 			healthSound.Play();
 			//The obejct is destroyed.
