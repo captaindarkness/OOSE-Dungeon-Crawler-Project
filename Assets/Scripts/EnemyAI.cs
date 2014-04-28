@@ -11,12 +11,14 @@ public class EnemyAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//Set target to find a GameObject with the Tag Player which is set in unity
 		target = GameObject.FindWithTag ("Player").transform;
 		myTransform = transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//If Detect is true the Enemy object will rotate its front towards the Player and move towards the Player object by trying to match its position 
 		if (Detect) {
 			myTransform.rotation = Quaternion.Slerp (myTransform.rotation, Quaternion.LookRotation (target.position - myTransform.position), rotationSpeed * Time.deltaTime);
 
@@ -27,7 +29,9 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	void detectArea(){
+		//Distance is used to define a circle around the Enemy
 		float distance = Vector3.Distance (target.transform.position, transform.position);
+		//If the Player is within 5 of the Enemy it will turn detect on
 		if (distance < 5) {
 			Detect = true;
 		} else if(distance > 5) {

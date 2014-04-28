@@ -29,16 +29,10 @@ public class EnemyAttack : MonoBehaviour {
 		}
 	}
 	private void Attack(){
-		
+		//This is used to define a area around the Enemy Object
 		float distance = Vector3.Distance (target.transform.position, transform.position);
-		
-		//		float dir = (target.transform.position - transform.Transform.position).normalized;
-		//
-		//		float direction = Vector3.Dot (dir, transform.forward);
-		
+		//If the player is within 2 the player will lose 5 health every 2 seconds
 		if(distance < 2){
-//			Health hp = (Health)target.GetComponent("Health");
-//			hp.modifyHealth(-3);
 			health.modifyHealth(-5);
 		}
 	}

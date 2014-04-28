@@ -34,7 +34,7 @@ public class SwordSwing : MonoBehaviour {
 		if(attackTimer < 0){
 			attackTimer = 0;
 		}
-
+		//These are used to Rotate the Sword so it faces the way you are walking
 		if(Input.GetKeyDown(KeyCode.W) && !faceUp || Input.GetKeyDown(KeyCode.UpArrow) && !faceUp){
 			newSwordPos = swordPos - 90.0f;
 			transform.rotation = Quaternion.Euler(0,newSwordPos,0);
