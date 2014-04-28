@@ -17,11 +17,12 @@ public class PlayerAttack : MonoBehaviour {
 		coolDown = 2.0f;
 		//The list is set to contain any object tagged with "enemy".
 		GameObject[] enemyTargets = GameObject.FindGameObjectsWithTag("enemy");
+		//If there are enemies in the world they will be pushed to the targets array
 		if (enemyTargets != null)
 		{
 			foreach(GameObject go in enemyTargets)
 			{
-				targets.Add(go);
+				targets.Add(go);//pushing targets in array
 			}
 		}
 	}

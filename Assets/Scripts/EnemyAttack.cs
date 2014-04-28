@@ -14,15 +14,15 @@ public class EnemyAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		//If the timer is above 0, the timer will go down.
 		if(attackTimer > 0){
 			attackTimer -= Time.deltaTime;
 		}
-		
+		//If attack timer should go below 0 the timer will reset to 0.
 		if(attackTimer < 0){
 			attackTimer = 0;
 		}
-		
+		//If attackTimer is equal to 0 it will run the Attack function and set attackTimer equal to coolDown
 		if(attackTimer == 0){
 			Attack();
 			attackTimer = coolDown;

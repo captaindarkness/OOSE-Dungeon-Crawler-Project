@@ -24,6 +24,7 @@ public class EnemyAI : MonoBehaviour {
 
 			myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
 		}
+		//Keeps running the detectArea function
 		detectArea ();
 		
 	}
@@ -31,10 +32,11 @@ public class EnemyAI : MonoBehaviour {
 	void detectArea(){
 		//Distance is used to define a circle around the Enemy
 		float distance = Vector3.Distance (target.transform.position, transform.position);
-		//If the Player is within 5 of the Enemy it will turn detect on
+		//If the Player is within 5 units of the Enemy it will turn detect on, if above 5 units it will turn off
 		if (distance < 5) {
 			Detect = true;
-		} else if(distance > 5) {
+		} 
+		else if(distance > 5) {
 			Detect = false;
 		}
 	}
