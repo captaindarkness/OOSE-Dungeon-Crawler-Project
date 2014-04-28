@@ -8,6 +8,7 @@ public class EnemyAttack : MonoBehaviour {
 	public Health health;
 	public float attackArea = 2;
 	public int enemyDamage = 5;
+	public AudioSource enemyAttack;
 	// Use this for initialization
 	void Start () {
 		attackTimer = 0;
@@ -36,6 +37,7 @@ public class EnemyAttack : MonoBehaviour {
 		//If the player is within 2 the player will lose 5 health every 2 seconds
 		if(distance < attackArea){
 			health.modifyHealth(-enemyDamage);
+			enemyAttack.Play ();
 		}
 	}
 }

@@ -10,7 +10,7 @@ public class CollectCoins : MonoBehaviour {
 		if (other.gameObject.name == "coin") {
 			//Adds 1 to the coin counter (the GUI is updated).
 			coins += 1;
-			//The obejct is destroyed.
+			//The object is destroyed.
 			Destroy(other.gameObject);
 			//The specific sound will play.
 			coinSound.Play();
@@ -20,7 +20,7 @@ public class CollectCoins : MonoBehaviour {
 	
 	void  OnGUI () {
 		//GUI for the amount of gold collected.
-		GUI.Label ( new Rect(20, 20, 200, 40), coins + "");
+		GUI.Label(new Rect(75,45,400,40),"<color=white><size=35>"+coins+"</size></color>");
 		
 	}
 }
