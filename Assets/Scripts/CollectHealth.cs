@@ -10,7 +10,7 @@ public class CollectHealth : MonoBehaviour {
 		//Checks wether the object is the correct one.
 		if (other.gameObject.name == "healthup") {
 			//Adds 30 health to the player's health.
-			health.modifyHealth(+30);
+			health.modifyHealth(+40);
 			//The specific sound will play.
 			healthSound.Play();
 			//The obejct is destroyed.
