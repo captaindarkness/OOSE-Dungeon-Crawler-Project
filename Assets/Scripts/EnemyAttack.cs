@@ -6,6 +6,7 @@ public class EnemyAttack : MonoBehaviour {
 	public float coolDown;
 	public Transform target;
 	public Health health;
+	public float attackArea = 2;
 	// Use this for initialization
 	void Start () {
 		attackTimer = 0;
@@ -32,7 +33,7 @@ public class EnemyAttack : MonoBehaviour {
 		//This is used to define a area around the Enemy Object
 		float distance = Vector3.Distance (target.transform.position, transform.position);
 		//If the player is within 2 the player will lose 5 health every 2 seconds
-		if(distance < 2){
+		if(distance < attackArea){
 			health.modifyHealth(-5);
 		}
 	}
