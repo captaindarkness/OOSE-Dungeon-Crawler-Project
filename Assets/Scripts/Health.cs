@@ -3,29 +3,30 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
 
-	//Variable for setting starting health
+	//Variable for setting starting health.
 	public int startHealth;
-	//Variable for setting amount of health per heart
+	//Variable for setting amount of health per heart.
 	public int healthPerHeart;
 
-	//Maximum amount of health available
+	//Maximum amount of health available.
 	private int maxHealth;
-	//Current health
+	//Current health.
 	private int currentHealth;
 
-	//An array which holds the different heart images (full, ½ full etc.)
+	//An array which holds the different heart images (full, ½ full etc.).
 	public Texture[] heartImages;
 	public GUITexture heartGUI;
+	//Texture for 'Game Over'.
 	public Texture gameOverTexture;
 
-	//An Array List which holds the hearts
 	private ArrayList hearts = new ArrayList();
-	
-	// Spacing:
+
 	//Variable for setting maximum hearts on a row
 	public float maxHeartsOnRow;
+	//Vaiables for space between heart icons.
 	private float spacingX;
 	private float spacingY;
+	//'Game Over' is set to false as default.
 	bool gameOver = false;
 	
 	void Start () {
@@ -33,8 +34,9 @@ public class Health : MonoBehaviour {
 		spacingY = -heartGUI.pixelInset.height;
 		AddHearts(startHealth/healthPerHeart);
 	}
-
+	// Update is called once per frame
 	void Update(){
+		//If health reaches 0, the player will now move and 'Game Over' appears.
 		if (currentHealth <= 0) {
 			Move.alive = false;
 			gameOver = true;
@@ -42,7 +44,7 @@ public class Health : MonoBehaviour {
 			Move.alive = true;
 		}
 	}
-
+	//GUI for 'Game Over'.
 	void OnGUI(){
 		if (gameOver) {
 			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gameOverTexture);
@@ -60,41 +62,49 @@ public class Health : MonoBehaviour {
 			//Sets the positions of the hearts
 			int y = (int)(Mathf.FloorToInt(hearts.Count / maxHeartsOnRow));
 			int x = (int)(hearts.Count - y * maxHeartsOnRow);
-
+			//Get specifications for heart.
 			newHeart.GetComponent<GUITexture>().pixelInset = new Rect(x * spacingX,y * spacingY,58,58);
 			newHeart.GetComponent<GUITexture>().texture = heartImages[0];
+			//Adds the heart.
 			hearts.Add(newHeart);
 
 		}
+		//Updates variables.
 		maxHealth += n * healthPerHeart;
 		currentHealth = maxHealth;
 		UpdateHearts();
 	}
 
-	
+	//Takes or adds health. ('amount' has to be set to a negative number to remove health.)
 	public void modifyHealth(int amount) {
 		currentHealth += amount;
 		currentHealth = Mathf.Clamp(currentHealth,0,maxHealth);
 		UpdateHearts();
 	}
 
+	//Updates GUI to show the correct amount of hearts.
 	void UpdateHearts() {
+		//Heart is set to not being empty by default.
 		bool restAreEmpty = false;
 		int i =0;
 		
 		foreach (Transform heart in hearts) {
-			
+			//If the heart is empty.
 			if (restAreEmpty) {
-				heart.guiTexture.texture = heartImages[0]; // heart is empty
+				// Heart is empty
+				heart.guiTexture.texture = heartImages[0];
 			}
 			else {
-				i += 1; // current iteration
+				// Current iteration
+				i += 1;
 				if (currentHealth >= i * healthPerHeart) {
-					heart.guiTexture.texture = heartImages[heartImages.Length-1]; // health of current heart is full
+					// Health of current heart is full
+					heart.guiTexture.texture = heartImages[heartImages.Length-1];
 				}
 				else {
 					int currentHeartHealth = (int)(healthPerHeart - (healthPerHeart * i - currentHealth));
-					int healthPerImage = healthPerHeart / heartImages.Length; // how much health is there per image
+					// How much health is there per image
+					int healthPerImage = healthPerHeart / heartImages.Length;
 					int imageIndex = currentHeartHealth / healthPerImage;
 
 					
