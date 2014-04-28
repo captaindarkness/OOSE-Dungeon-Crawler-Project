@@ -17,20 +17,23 @@ public class SwordSwing : MonoBehaviour {
 	public AudioSource swing;
 
 	void Start (){
+		//The timer starts at 0 and will be updated later.
 		attackTimer = 0;
+		//The cool down is set to 1
 		coolDown = 1.0f;
 	}
-
+	//Draw an object and use that as pivot point for sword
 	void OnDrawGizmos(){
 		Gizmos.color = gizmoColor;
 		Gizmos.DrawWireSphere (transform.position, gizmoSize);
 	}
 
 	void Update(){
+		//If the timer is above 0, the timer will go down.
 		if(attackTimer > 0){
 			attackTimer -= Time.deltaTime;
 		}
-
+		//If attack timer should go below 0 the timer will reset to 0.
 		if(attackTimer < 0){
 			attackTimer = 0;
 		}
@@ -42,7 +45,6 @@ public class SwordSwing : MonoBehaviour {
 			faceDown = false;
 			faceLeft = false;
 			faceRight = false;
-			//Debug.Log("Facing up");
 		}
 		if(Input.GetKeyDown(KeyCode.S) && !faceDown || Input.GetKeyDown(KeyCode.DownArrow) && !faceDown){
 			newSwordPos = swordPos + 90.0f;
@@ -51,7 +53,6 @@ public class SwordSwing : MonoBehaviour {
 			faceDown = true;
 			faceLeft = false;
 			faceRight = false;
-			//Debug.Log("Facing down");
 		}
 		if(Input.GetKeyDown(KeyCode.A) && !faceLeft || Input.GetKeyDown(KeyCode.LeftArrow) && !faceLeft){
 			newSwordPos = swordPos + 180.0f;
@@ -60,7 +61,6 @@ public class SwordSwing : MonoBehaviour {
 			faceDown = false;
 			faceLeft = true;
 			faceRight = false;
-			//Debug.Log("Facing left");
 		}
 		if(Input.GetKeyDown(KeyCode.D) && !faceRight || Input.GetKeyDown(KeyCode.RightArrow) && !faceRight){
 			newSwordPos = swordPos;
@@ -69,13 +69,13 @@ public class SwordSwing : MonoBehaviour {
 			faceDown = false;
 			faceLeft = false;
 			faceRight = true;
-			//Debug.Log("Facing right");
 		}
-
+		//Attack function, if key is up, reset the sword position
 		if (Input.GetKeyUp (KeyCode.Space)) {
 			Quaternion target = Quaternion.Euler (0, newSwordPos, 0);
 			transform.rotation = Quaternion.Slerp (transform.rotation, target, smooth);
 		}
+		//Attack function, if key is down, rotate the sword with 60 degree on y axiz
 		if(Input.GetKeyDown (KeyCode.Space)){
 			if(attackTimer == 0){
 				attackTimer = coolDown;

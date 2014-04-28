@@ -7,8 +7,9 @@ public class EnemyAI : MonoBehaviour {
 	public float moveSpeed = 0.5f;
 	public float rotationSpeed = 3.0f;
 	bool Detect;
+	public float radiusAI = 10;
 
-
+		
 	// Use this for initialization
 	void Start () {
 		//Set target to find a GameObject with the Tag Player which is set in unity
@@ -33,10 +34,10 @@ public class EnemyAI : MonoBehaviour {
 		//Distance is used to define a circle around the Enemy
 		float distance = Vector3.Distance (target.transform.position, transform.position);
 		//If the Player is within 5 units of the Enemy it will turn detect on, if above 5 units it will turn off
-		if (distance < 5) {
+		if (distance < radiusAI) {
 			Detect = true;
 		} 
-		else if(distance > 5) {
+		else if(distance > radiusAI) {
 			Detect = false;
 		}
 	}

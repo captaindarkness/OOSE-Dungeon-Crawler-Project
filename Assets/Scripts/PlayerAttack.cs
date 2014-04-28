@@ -13,8 +13,8 @@ public class PlayerAttack : MonoBehaviour {
 	void Start (){
 		//The timer starts at 0 and will be updated later.
 		attackTimer = 0;
-		//The cool down is set to 2
-		coolDown = 2.0f;
+		//The cool down is set to 1
+		coolDown = 1.0f;
 		//The list is set to contain any object tagged with "enemy".
 		GameObject[] enemyTargets = GameObject.FindGameObjectsWithTag("enemy");
 		//If there are enemies in the world they will be pushed to the targets array
