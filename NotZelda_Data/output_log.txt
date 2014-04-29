@@ -1,25 +1,41 @@
 Initialize engine version: 4.3.4f1 (e444f76e01cd)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.3182]
-    Renderer: NVIDIA GeForce GTX 460M 
-    Vendor:   NVIDIA
-    VRAM:     1488 MB (via DXGI)
-    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+    Version:  Direct3D 9.0c [aticfx32.dll 8.17.10.1247]
+    Renderer: AMD Radeon HD 6800 Series
+    Vendor:   ATI
+    VRAM:     1011 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=1
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\song\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\song\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\song\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\song\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\song\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
-Loading C:\Users\song\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-- Completed reload, in  0.061 seconds
-desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+Platform assembly: C:\Users\Darkness\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Darkness\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Darkness\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Darkness\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Darkness\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\Darkness\Documents\GitHub\OOSE-Dungeon-Crawler-Project\NotZelda_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+- Completed reload, in  0.060 seconds
+desktop: 1920x1080 60Hz; virtual: 3600x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-UnloadTime: 0.752790 ms
+UnloadTime: 0.518214 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2824.
-Total: 2.900320 ms (FindLiveObjects: 0.256061 ms CreateObjectMapping: 0.041051 ms MarkObjects: 0.707119 ms  DeleteObjects: 0.559332 ms)
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 2843.
+Total: 1.488036 ms (FindLiveObjects: 0.126259 ms CreateObjectMapping: 0.023788 ms MarkObjects: 0.404763 ms  DeleteObjects: 0.314368 ms)
+
+Hit
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Hit
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Hit
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Hit
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 

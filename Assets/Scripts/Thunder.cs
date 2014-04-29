@@ -7,10 +7,11 @@ public class Thunder : MonoBehaviour {
 	
 	IEnumerator Start ()
 	{
+		//Continues while loop that will will turn the Light of the Directional light on and off between 15 and 25 seconds
 		while (true)
 		{
 			rand = Random.Range (15,25);
-			light.enabled = false; //toggle on/off the enabled property
+			light.enabled = false;
 			yield return new WaitForSeconds(rand);
 			light.enabled = true;
 			thunder.Play ();

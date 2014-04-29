@@ -1,7 +1,8 @@
 ﻿OOSE-Dungeon-Crawler-Project
 ============================
 INSTALLATION:
-…
+1. Clone to desktop or download zip file and unpack the zip file.
+2. Run the NotZelda.exe file and play.
 
 INTRODUCTION:
 The game is a dungeon-crawler in which the player has to get to the end of the castle and kill the boss. But to get there the player will have to defeat the enemies scattered around the castle.

@@ -37,6 +37,7 @@ public class Health : MonoBehaviour {
 		//If health reaches 0, the player will now move and 'Game Over' appears.
 		if (currentHealth <= 0) {
 			Move.alive = false;
+			//Load the Game over scene
 			Application.LoadLevel("GameOver");
 		} else {
 			Move.alive = true;
