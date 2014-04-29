@@ -1,4 +1,4 @@
-OOSE-Dungeon-Crawler-Project
+﻿OOSE-Dungeon-Crawler-Project
 ============================
 INSTALLATION:
 …
@@ -12,11 +12,11 @@ The score system is based on how much gold the player ends up having collected w
 CONTROLS:
 The player will move with the W, A, S, D or arrow keys, and attack with the SPACE:
 
-W / UP = moving up
-A / LEFT = moving left
-S / DOWN = moving down
-D / RIGHT = moving right
-SPACE = ATTACK
+-	W / UP = moving up
+-	A / LEFT = moving left
+-	S / DOWN = moving down
+-	D / RIGHT = moving right
+-	SPACE = ATTACK
 
 TECHNICALS:
 -	The player attacks are limited to a cool down of 2 seconds to prevent spamming
