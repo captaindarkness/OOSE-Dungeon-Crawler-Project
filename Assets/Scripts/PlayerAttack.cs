@@ -62,7 +62,9 @@ public class PlayerAttack : MonoBehaviour {
 				if(distance < 2){
 					//Gets the component for the enemy's health.
 					EnemyHealth eh = (EnemyHealth)target.GetComponent("EnemyHealth");
+
 					//Enemy looses 10 health.
+
 					eh.AddjustCurrentHealth(-10);
 				}
 			}

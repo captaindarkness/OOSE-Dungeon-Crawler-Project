@@ -26,9 +26,7 @@ public class Health : MonoBehaviour {
 	//Vaiables for space between heart icons.
 	private float spacingX;
 	private float spacingY;
-	//'Game Over' is set to false as default.
-	bool gameOver = false;
-	
+
 	void Start () {
 		spacingX = heartGUI.pixelInset.width;
 		spacingY = -heartGUI.pixelInset.height;
@@ -39,15 +37,9 @@ public class Health : MonoBehaviour {
 		//If health reaches 0, the player will now move and 'Game Over' appears.
 		if (currentHealth <= 0) {
 			Move.alive = false;
-			gameOver = true;
+			Application.LoadLevel("GameOver");
 		} else {
 			Move.alive = true;
-		}
-	}
-	//GUI for 'Game Over'.
-	void OnGUI(){
-		if (gameOver) {
-			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gameOverTexture);
 		}
 	}
 

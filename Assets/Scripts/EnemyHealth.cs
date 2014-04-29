@@ -14,6 +14,10 @@ public class EnemyHealth : MonoBehaviour {
 	public void AddjustCurrentHealth(int addj){
 		curHealth += addj;
 
+		if(curHealth <= 0 && maxHealth == 60){
+			Application.LoadLevel("EndMenu");
+		}
+
 		if(curHealth <= 0){
 			Destroy (gameObject);
 		}
